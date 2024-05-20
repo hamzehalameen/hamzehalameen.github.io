@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="stylesheet" rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>PulseBlog | For You</title>
+</head>
+<body>
+    <script>
+        window.onload = function() {
+            document.getElementById('switch-style').addEventListener('click', function() {
+                var body = document.body;
+                if (body.style.backgroundColor != 'lightblue') {
+                    body.style.backgroundColor = 'lightblue';
+                } else {
+                    body.style.backgroundColor = '';
+                }
+            });
+        }
+    </script>
+    <nav>
+        <div class="logo-container">
+            <a href="index.html">
+            <img class="logo" src="resources/Logo.png" alt="Logo">
+        </a>
+        </div>
+        <div class="navbar-buttons">
+            <a href="subscribe.html" class="button">Subscribe</a>
+            <a href="podcast.html" class="button">Podcast</a>
+            <a href="community.html" class="button">Community</a>
+        </div>
+        <div class="navbar-links">
+            
+            <a href="#" class="link">Sign In</a>
+            <a href="#" class="link">Get Started</a>
+        </div>
+    </nav>
+    <button id="switch-style">Blue BG</button>
+    <div class="big-box">
+        <p>PulseBlog</p>
+    </div>
+    <div class="featured-articles">
+        <h2>Featured Articles</h2>
+        <article>
+            <img src="resources/Featured%20Article%20Photo%201.jpg" alt="Article Image">
+            <div class="article-text">
+                <h2>How 3D Technology is Transforming Our World</h2>
+                <p>In the ever-evolving landscape of technology, one innovation stands out for its ability to literally add depth to our perception: 3D technology. From the big screens in cinemas to the realms of virtual reality, 3D technology has transformed the way we experience digital content.</p>
+                <button class="read-more">Read More</button>
+            </div>
+        </article>
+        <article>
+            <img src="resources/Featured%20Article%20Photo%202.jpg" alt="Article Image">
+            <div class="article-text">
+                <h2>Beyond the Screen: The Revolutionary Impact of VR Headsets</h2>
+                <p>In the digital age, the quest for immersive experiences has led to the development of technology that can transport us beyond the confines of our immediate surroundings. At the forefront of this revolution is the virtual reality (VR) headset.</p>
+                <button class="read-more">Read More</button>
+            </div>
+        </article>
+    </div>
+    <h2>Trending Videos</h2>
+    <div class="trending-videos">
+        
+        <div class="video">
+            <video controls>
+                <source src="resources/Trending%20Video%202.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video">
+            <video controls>
+                <source src="resources/Trending%20Video%201.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <div class="other-blogs">
+        <h2>Other Blogs We Love</h2>
+        <a href="https://techcrunch.com/" target="_blank">TechCrunch</a>
+        <a href="https://mashable.com/" target="_blank">Mashable</a>
+        <a href="https://www.engadget.com/" target="_blank">Engadget</a>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>2024 PulseBlog. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

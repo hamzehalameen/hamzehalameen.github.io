@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>PulseBlog | Subscribe</title>
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <a href="index.html">
+            <img class="logo" src="resources/Logo.png" alt="Logo">
+        </a>
+        </div>
+        <div class="navbar-buttons">
+            <a href="subscribe.html" class="button">Subscribe</a>
+            <a href="podcast.html" class="button">Podcast</a>
+            <a href="community.html" class="button">Community</a>
+        </div>
+        <div class="navbar-links">
+            <a href="#" class="link">Sign In</a>
+            <a href="#" class="link">Get Started</a>
+        </div>
+    </nav>
+
+    <h1>Subscribe to our newsletter!</h1>
+    <div class="content">
+        <img src="resources/Picture%203.jpg" alt="Picutre of Letter">
+        <table>
+            <tr>
+                <th>Categories</th>
+                <th>Blog Posts</th>
+            </tr>
+            <tr>
+                <td>Technology</td>
+                <td>Posts about the latest gadgets</td>
+            </tr>
+            <tr>
+                <td>Lifestyle</td>
+                <td>Articles about topics like personal development</td>
+            </tr>
+            <tr>
+                <td>Travel</td>
+                <td>Tips and guides related to travel destinations</td>
+            </tr>
+        </table>
+    </div>
+    <form action="mailto:fakeemail@example.com" method="post" enctype="text/plain">
+    <div class="questions-one">
+        <div class="radio-buttons">
+            <h3>Where did you hear about us?</h3>
+            <input type="radio" id="radio1" name="source" value="Social Media">
+            <label for="radio1">Social Media</label><br>
+            <input type="radio" id="radio2" name="source" value="Word of Mouth">
+            <label for="radio2">Word of Mouth</label><br>
+            <input type="radio" id="radio3" name="source" value="Advertisement">
+            <label for="radio3">Advertisement</label>
+        </div>
+        <div class="checkboxes">
+            <h3>What emails do you want to recieve?</h3>
+            <input type="checkbox" id="checkbox1" name="technology">
+            <label for="checkbox1">Technology</label><br>
+            <input type="checkbox" id="checkbox2" name="lifestyle">
+            <label for="checkbox2">Lifestyle</label><br>
+            <input type="checkbox" id="checkbox3" name="travel">
+            <label for="checkbox3">Travel</label>
+        </div>
+        <div class="feedback">
+            <h3>What do you think about us so far?</h3>
+            <textarea name="feedback" rows="4" cols="50"></textarea>
+        </div>
+        <div class="email-entry">
+            <h3>Your Email:</h3>
+            <input type="email" name="email" required>
+            <input type="submit" value="Submit">
+        </div>
+        
+        
+    </div>
+    <input type="reset" value="Reset">
+    </form>
+
+    <footer>
+        <div class="footer-content">
+            <p>2024 PulseBlog. All rights reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
