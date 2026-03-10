@@ -1,0 +1,498 @@
+:root {
+  --bg-top: #060816;
+  --bg-bottom: #120d1f;
+  --text-main: #f7f1df;
+  --text-soft: #d9d1c2;
+  --line: rgba(255, 240, 209, 0.16);
+  --card: rgba(13, 14, 28, 0.72);
+  --gold: #f8c46d;
+  --gold-strong: #ff9a3c;
+  --violet: #5f4ecb;
+  --mist: rgba(241, 209, 175, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Segoe UI Variable Text", "Trebuchet MS", sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at top, rgba(116, 93, 255, 0.14), transparent 30%),
+    linear-gradient(180deg, var(--bg-top) 0%, #090b14 45%, var(--bg-bottom) 100%);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+.hero__scene {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(6, 8, 22, 0.4), rgba(6, 8, 22, 0.15) 35%, rgba(6, 8, 22, 0.92) 100%),
+    radial-gradient(circle at 20% 18%, rgba(255, 188, 104, 0.12), transparent 20%),
+    radial-gradient(circle at 75% 12%, rgba(97, 77, 203, 0.2), transparent 24%);
+}
+
+.scene-grid,
+.stars,
+.nebula,
+.planet,
+.comet,
+.mountains,
+.mist {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.scene-grid {
+  opacity: 0.2;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 72px 72px;
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.65), transparent 80%);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.65), transparent 80%);
+}
+
+.parallax {
+  --parallax-shift: 0px;
+  --parallax-rotate: 0deg;
+  transform: var(--base-transform, translate3d(0, 0, 0)) translate3d(0, var(--parallax-shift), 0) rotate(var(--parallax-rotate));
+  will-change: transform;
+}
+
+.stars {
+  background-repeat: repeat;
+}
+
+.stars--far {
+  opacity: 0.8;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.9) 0 1.3px, transparent 1.7px),
+    radial-gradient(circle at 74% 18%, rgba(255, 226, 174, 0.9) 0 1px, transparent 1.4px),
+    radial-gradient(circle at 40% 72%, rgba(255, 255, 255, 0.75) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 84% 64%, rgba(255, 255, 255, 0.7) 0 1.2px, transparent 1.8px),
+    radial-gradient(circle at 10% 82%, rgba(255, 255, 255, 0.65) 0 1px, transparent 1.6px);
+  background-size: 340px 340px;
+}
+
+.stars--mid {
+  opacity: 0.55;
+  background-image:
+    radial-gradient(circle at 16% 50%, rgba(255, 240, 209, 0.95) 0 1.7px, transparent 2px),
+    radial-gradient(circle at 45% 20%, rgba(255, 255, 255, 0.8) 0 1.5px, transparent 1.9px),
+    radial-gradient(circle at 78% 42%, rgba(255, 225, 164, 0.82) 0 1.3px, transparent 1.7px),
+    radial-gradient(circle at 64% 80%, rgba(255, 255, 255, 0.85) 0 1.5px, transparent 1.9px);
+  background-size: 260px 260px;
+}
+
+.nebula {
+  filter: blur(8px);
+}
+
+.nebula--violet {
+  inset: 10% 0 auto 8%;
+  width: 42rem;
+  height: 24rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(118, 98, 255, 0.34) 0%, rgba(88, 54, 163, 0.12) 48%, transparent 72%);
+}
+
+.nebula--gold {
+  inset: 18% 8% auto auto;
+  width: 30rem;
+  height: 20rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 193, 110, 0.28) 0%, rgba(255, 193, 110, 0.1) 44%, transparent 74%);
+}
+
+.planet--glow {
+  inset: 10% auto auto 9%;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 35%, rgba(255, 244, 222, 0.95), rgba(255, 194, 104, 0.85) 34%, rgba(255, 132, 64, 0.55) 60%, transparent 74%),
+    radial-gradient(circle, rgba(255, 195, 123, 0.28), transparent 70%);
+  box-shadow: 0 0 70px rgba(255, 188, 104, 0.35);
+}
+
+.planet--ringed {
+  inset: 14% 12% auto auto;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffedd2 0%, #d1c2f3 18%, #8662d8 48%, #3d2b73 78%, transparent 79%);
+}
+
+.planet--ringed::before,
+.planet--ringed::after {
+  content: "";
+  position: absolute;
+  inset: 50% auto auto 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(-16deg);
+}
+
+.planet--ringed::before {
+  width: 20rem;
+  height: 4rem;
+  border: 10px solid rgba(255, 209, 147, 0.45);
+}
+
+.planet--ringed::after {
+  width: 20rem;
+  height: 4rem;
+  border: 2px solid rgba(255, 248, 229, 0.55);
+}
+
+.comet {
+  inset: auto auto auto auto;
+  width: 14rem;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 243, 224, 0.95));
+  filter: drop-shadow(0 0 12px rgba(255, 240, 213, 0.65));
+}
+
+.comet::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: #fff7e8;
+}
+
+.comet--one {
+  top: 22%;
+  left: 54%;
+  --base-transform: rotate(-18deg);
+}
+
+.comet--two {
+  top: 34%;
+  left: 18%;
+  width: 10rem;
+  --base-transform: rotate(18deg);
+}
+
+.mountains {
+  inset: auto 0 0;
+  height: 56vh;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+}
+
+.mountains--back {
+  height: 50vh;
+  clip-path: polygon(0 100%, 12% 56%, 24% 72%, 37% 38%, 49% 62%, 61% 28%, 73% 60%, 88% 35%, 100% 100%);
+  background: linear-gradient(180deg, rgba(40, 39, 77, 0.2), rgba(14, 17, 34, 0.96));
+}
+
+.mountains--mid {
+  height: 42vh;
+  clip-path: polygon(0 100%, 0 72%, 14% 58%, 24% 66%, 37% 42%, 47% 61%, 58% 46%, 70% 64%, 83% 40%, 100% 74%, 100% 100%);
+  background: linear-gradient(180deg, rgba(104, 82, 155, 0.34), rgba(8, 10, 18, 0.98));
+}
+
+.mountains--front {
+  height: 32vh;
+  clip-path: polygon(0 100%, 0 70%, 12% 84%, 28% 48%, 40% 70%, 54% 45%, 66% 72%, 78% 52%, 90% 75%, 100% 66%, 100% 100%);
+  background:
+    linear-gradient(180deg, rgba(255, 194, 105, 0.18), rgba(4, 5, 11, 1) 55%),
+    linear-gradient(90deg, rgba(255, 194, 105, 0.06), transparent 40%);
+}
+
+.mist {
+  inset: auto -5% -6rem;
+  height: 18rem;
+  filter: blur(22px);
+  background: radial-gradient(circle, var(--mist) 0%, transparent 70%);
+}
+
+.mist--one {
+  width: 40rem;
+}
+
+.mist--two {
+  width: 32rem;
+  left: auto;
+  right: 4%;
+  bottom: -3rem;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 42rem;
+  padding: 16vh 7vw 0;
+}
+
+.eyebrow,
+.section__kicker,
+.hero__panel-label {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.76rem;
+  color: var(--gold);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Segoe UI Variable Display", "Franklin Gothic Medium", sans-serif;
+  line-height: 0.95;
+}
+
+h1 {
+  margin-top: 1rem;
+  font-size: clamp(3.4rem, 7vw, 7rem);
+  max-width: 11ch;
+}
+
+.hero__lede,
+.section p,
+.checklist div,
+.card p,
+.hero__stats span {
+  color: var(--text-soft);
+}
+
+.hero__lede {
+  margin-top: 1.4rem;
+  max-width: 34rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 12rem;
+  padding: 0.95rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--text-main);
+  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 211, 150, 0.45);
+}
+
+.button--primary {
+  background: linear-gradient(90deg, rgba(255, 157, 64, 0.95), rgba(255, 210, 120, 0.9));
+  color: #1b1208;
+  border: none;
+}
+
+.button--ghost {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.hero__panel {
+  position: absolute;
+  right: 7vw;
+  bottom: 12vh;
+  z-index: 2;
+  width: min(24rem, calc(100% - 2rem));
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 1.4rem;
+  background: linear-gradient(180deg, rgba(18, 16, 33, 0.8), rgba(8, 9, 18, 0.64));
+  backdrop-filter: blur(16px);
+}
+
+.hero__stats {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.hero__stats strong {
+  display: block;
+  font-size: 1.5rem;
+  color: #fff7e8;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  padding: 6rem 7vw;
+}
+
+.section--intro {
+  margin-top: -2rem;
+}
+
+.section__inner {
+  max-width: 74rem;
+  margin: 0 auto;
+}
+
+.section h2 {
+  margin: 0.8rem 0 1.4rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  max-width: 12ch;
+}
+
+.section p {
+  max-width: 44rem;
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+.cards {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 2rem;
+}
+
+.card,
+.checklist div {
+  border: 1px solid var(--line);
+  border-radius: 1.4rem;
+  background: var(--card);
+  backdrop-filter: blur(14px);
+}
+
+.card {
+  padding: 1.5rem;
+}
+
+.card h3 {
+  margin-bottom: 0.85rem;
+  font-size: 1.35rem;
+}
+
+.split-layout {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: start;
+}
+
+.checklist {
+  display: grid;
+  gap: 1rem;
+}
+
+.checklist div {
+  padding: 1.15rem 1.2rem;
+}
+
+@media (max-width: 980px) {
+  .hero__panel {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin: 2rem 7vw 0;
+  }
+
+  .hero__stats,
+  .cards,
+  .split-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .planet--ringed {
+    width: 11rem;
+    height: 11rem;
+    right: 7%;
+  }
+
+  .planet--ringed::before,
+  .planet--ringed::after {
+    width: 15rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero__content {
+    padding-top: 12vh;
+  }
+
+  h1 {
+    max-width: 8ch;
+  }
+
+  .hero__lede,
+  .section p {
+    font-size: 0.98rem;
+  }
+
+  .section {
+    padding: 4.5rem 1.25rem;
+  }
+
+  .hero__content,
+  .hero__panel {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .nebula--violet,
+  .nebula--gold,
+  .comet {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .parallax {
+    transform: none !important;
+  }
+}
+
+

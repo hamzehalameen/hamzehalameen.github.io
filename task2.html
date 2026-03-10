@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parallax Universe</title>
+  <link rel="stylesheet" href="task2.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero__scene">
+      <div class="scene-grid" aria-hidden="true"></div>
+      <div class="stars stars--far parallax" data-parallax data-speed="-0.12" aria-hidden="true"></div>
+      <div class="stars stars--mid parallax" data-parallax data-speed="-0.22" aria-hidden="true"></div>
+      <div class="nebula nebula--violet parallax" data-parallax data-speed="-0.18" aria-hidden="true"></div>
+      <div class="nebula nebula--gold parallax" data-parallax data-speed="-0.08" aria-hidden="true"></div>
+      <div class="planet planet--glow parallax" data-parallax data-speed="-0.1" aria-hidden="true"></div>
+      <div class="planet planet--ringed parallax" data-parallax data-speed="0.1" data-rotate="0.01" aria-hidden="true"></div>
+      <div class="comet comet--one parallax" data-parallax data-speed="0.22" aria-hidden="true"></div>
+      <div class="comet comet--two parallax" data-parallax data-speed="0.3" aria-hidden="true"></div>
+      <div class="mountains mountains--back parallax" data-parallax data-speed="0.18" aria-hidden="true"></div>
+      <div class="mountains mountains--mid parallax" data-parallax data-speed="0.34" aria-hidden="true"></div>
+      <div class="mountains mountains--front parallax" data-parallax data-speed="0.48" aria-hidden="true"></div>
+      <div class="mist mist--one parallax" data-parallax data-speed="0.4" aria-hidden="true"></div>
+      <div class="mist mist--two parallax" data-parallax data-speed="0.55" aria-hidden="true"></div>
+
+      <div class="hero__content parallax" data-parallax data-speed="0.08">
+        <p class="eyebrow">Task 2 - Parallax Scrolling</p>
+        <h1>Build a universe with the scroll.</h1>
+        <p class="hero__lede">
+          A layered cosmic scene with drifting fog, distant stars, floating planets,
+          and responsive depth created with CSS and vanilla JavaScript.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#story">Start the journey</a>
+          <a class="button button--ghost" href="#layers">See the layers</a>
+        </div>
+      </div>
+
+      <div class="hero__panel parallax" data-parallax data-speed="0.16">
+        <p class="hero__panel-label">Scene Depth</p>
+        <div class="hero__stats">
+          <article>
+            <strong>12+</strong>
+            <span>Visual layers</span>
+          </article>
+          <article>
+            <strong>60 FPS</strong>
+            <span>RAF animation loop</span>
+          </article>
+          <article>
+            <strong>0</strong>
+            <span>External libraries</span>
+          </article>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--intro" id="story">
+      <div class="section__inner">
+        <p class="section__kicker">Concept</p>
+        <h2>From a starter demo to a full parallax experience.</h2>
+        <p>
+          The original sample used three background layers and a few rocks. This version
+          expands that idea into a complete atmosphere: deep sky gradients, clustered star
+          fields, soft nebula clouds, multiple terrain silhouettes, and ambient motion that
+          reacts to scroll position.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="layers">
+      <div class="section__inner">
+        <p class="section__kicker">What Changed</p>
+        <div class="cards">
+          <article class="card">
+            <h3>More depth</h3>
+            <p>Foreground mist, three mountain ranges, dual star fields, and separate celestial objects create stronger visual separation.</p>
+          </article>
+          <article class="card">
+            <h3>Better structure</h3>
+            <p>The page is now a complete, deployable HTML document instead of a fragment, with clearer content sections and calls to action.</p>
+          </article>
+          <article class="card">
+            <h3>Modern motion</h3>
+            <p>Parallax movement is handled with requestAnimationFrame, CSS variables, and reduced-motion support rather than jQuery top offsets.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--details">
+      <div class="section__inner split-layout">
+        <div>
+          <p class="section__kicker">Design Notes</p>
+          <h2>Intentional contrast, layered silhouettes, and motion restraint.</h2>
+          <p>
+            The visual direction leans cinematic rather than generic: warm gold highlights,
+            deep navy shadows, angular mountain cuts, and fog that softens the lower frame.
+            Faster elements sit closer to the viewer while the distant sky barely shifts,
+            which keeps the effect readable instead of chaotic.
+          </p>
+        </div>
+        <div class="checklist">
+          <div>Responsive layout for desktop and mobile</div>
+          <div>Decorative layers built with gradients and CSS shapes</div>
+          <div>Accessible text contrast and semantic structure</div>
+          <div>Ready to deploy as a static GitHub Pages site</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="task2.js" defer></script>
+</body>
+</html>
+
